@@ -1,6 +1,4 @@
-
 package com.mycompany.ilib;
-
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import com.mycompany.views.*;
@@ -13,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
 
 public class Dashboard extends javax.swing.JFrame {
@@ -71,11 +68,11 @@ public class Dashboard extends javax.swing.JFrame {
         menu = new javax.swing.JPanel();
         appName = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btn_prin = new javax.swing.JButton();
+        btn_venta = new javax.swing.JButton();
         btn_lends = new javax.swing.JButton();
         btn_returns = new javax.swing.JButton();
         btn_users = new javax.swing.JButton();
-        btn_boo = new javax.swing.JButton();
+        btn_serv = new javax.swing.JButton();
         btn_reports = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
@@ -88,7 +85,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        menu.setBackground(new java.awt.Color(243, 94, 69));
+        menu.setBackground(new java.awt.Color(255, 102, 102));
         menu.setPreferredSize(new java.awt.Dimension(270, 640));
 
         appName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -96,20 +93,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         jSeparator1.setPreferredSize(new java.awt.Dimension(50, 5));
 
-        btn_prin.setBackground(new java.awt.Color(255, 130, 84));
-        btn_prin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_prin.setForeground(new java.awt.Color(255, 255, 255));
-        btn_prin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
-        btn_prin.setText("Venta");
-        btn_prin.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
-        btn_prin.setBorderPainted(false);
-        btn_prin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_prin.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_prin.setIconTextGap(13);
-        btn_prin.setInheritsPopupMenu(true);
-        btn_prin.addActionListener(new java.awt.event.ActionListener() {
+        btn_venta.setBackground(new java.awt.Color(255, 130, 84));
+        btn_venta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_venta.setForeground(new java.awt.Color(255, 255, 255));
+        btn_venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
+        btn_venta.setText("Venta");
+        btn_venta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
+        btn_venta.setBorderPainted(false);
+        btn_venta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_venta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_venta.setIconTextGap(13);
+        btn_venta.setInheritsPopupMenu(true);
+        btn_venta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_prinActionPerformed(evt);
+                btn_ventaActionPerformed(evt);
             }
         });
 
@@ -164,20 +161,20 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_boo.setBackground(new java.awt.Color(255, 130, 84));
-        btn_boo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_boo.setForeground(new java.awt.Color(255, 255, 255));
-        btn_boo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book-open-page-variant.png"))); // NOI18N
-        btn_boo.setText("Quien hara esto¡");
-        btn_boo.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
-        btn_boo.setBorderPainted(false);
-        btn_boo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btn_boo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btn_boo.setIconTextGap(13);
-        btn_boo.setInheritsPopupMenu(true);
-        btn_boo.addActionListener(new java.awt.event.ActionListener() {
+        btn_serv.setBackground(new java.awt.Color(255, 130, 84));
+        btn_serv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_serv.setForeground(new java.awt.Color(255, 255, 255));
+        btn_serv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book-open-page-variant.png"))); // NOI18N
+        btn_serv.setText("Servicios");
+        btn_serv.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
+        btn_serv.setBorderPainted(false);
+        btn_serv.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_serv.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btn_serv.setIconTextGap(13);
+        btn_serv.setInheritsPopupMenu(true);
+        btn_serv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_booActionPerformed(evt);
+                btn_servActionPerformed(evt);
             }
         });
 
@@ -198,7 +195,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\mvjxd\\OneDrive\\Documentos\\NetBeansProjects\\iLib-main\\src\\main\\resources\\Logo.png")); // NOI18N
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -206,9 +203,9 @@ public class Dashboard extends javax.swing.JFrame {
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btn_lends, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_users, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_prin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_venta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_returns, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-            .addComponent(btn_boo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_serv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btn_reports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(menuLayout.createSequentialGroup()
                 .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,16 +236,17 @@ public class Dashboard extends javax.swing.JFrame {
                     .addGroup(menuLayout.createSequentialGroup()
                         .addGap(150, 150, 150)
                         .addComponent(btn_users, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_prin, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(menuLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(btn_returns, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(menuLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(btn_boo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(menuLayout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(btn_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_returns, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(menuLayout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(btn_serv, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(menuLayout.createSequentialGroup()
+                                .addGap(96, 96, 96)
+                                .addComponent(btn_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, Short.MAX_VALUE)
                 .addGap(15, 15, 15))
@@ -321,9 +319,9 @@ public class Dashboard extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_prinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prinActionPerformed
+    private void btn_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ventaActionPerformed
         ShowJPanel(new Ventas());
-    }//GEN-LAST:event_btn_prinActionPerformed
+    }//GEN-LAST:event_btn_ventaActionPerformed
 
     private void btn_lendsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lendsActionPerformed
         ShowJPanel(new Lendings());
@@ -337,9 +335,9 @@ public class Dashboard extends javax.swing.JFrame {
         ShowJPanel(new Reportsaa());
     }//GEN-LAST:event_btn_usersActionPerformed
 
-    private void btn_booActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_booActionPerformed
-        ShowJPanel(new Boo());
-    }//GEN-LAST:event_btn_booActionPerformed
+    private void btn_servActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_servActionPerformed
+        ShowJPanel(new Servicios());
+    }//GEN-LAST:event_btn_servActionPerformed
 
     private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
         ShowJPanel(new Reports());
@@ -363,12 +361,12 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appName;
     private javax.swing.JPanel background;
-    private javax.swing.JButton btn_boo;
     private javax.swing.JButton btn_lends;
-    private javax.swing.JButton btn_prin;
     private javax.swing.JButton btn_reports;
     private javax.swing.JButton btn_returns;
+    private javax.swing.JButton btn_serv;
     private javax.swing.JButton btn_users;
+    private javax.swing.JButton btn_venta;
     private static javax.swing.JPanel content;
     private javax.swing.JLabel dateText;
     private javax.swing.JPanel header;
