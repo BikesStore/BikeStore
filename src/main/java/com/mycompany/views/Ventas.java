@@ -183,11 +183,11 @@ public class Ventas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productoActionPerformed
-        // TODO add your handling code here:
+    throw new UnsupportedOperationException("Not supported yet.");
     }//GEN-LAST:event_productoActionPerformed
 
     private void precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioActionPerformed
-        // TODO add your handling code here:
+    throw new UnsupportedOperationException("Not supported yet.");
     }//GEN-LAST:event_precioActionPerformed
 
 

@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class inicio extends javax.swing.JFrame {
@@ -326,67 +327,41 @@ private void ShowJPanel(javax.swing.JPanel panel) {
     }//GEN-LAST:event_userTxtMousePressed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-       String username = userTxt.getText();
-    String password = new String(passTxt.getPassword());
+        String username = userTxt.getText();
+        String password = new String(passTxt.getPassword());
 
-    try {
-        Connection conexion = c.conectar();
-        if (conexion != null) {
-            String query = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND contrasena = ?";
-            PreparedStatement ps = conexion.prepareStatement(query);
-            ps.setString(1, username);
-            ps.setString(2, password);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                JOptionPane.showMessageDialog(this, "Intento de inicio de sesión exitoso", "LOGIN", JOptionPane.INFORMATION_MESSAGE);
-                Dashboard dashboard = new Dashboard();
-                ShowJPanel(dashboard);
-            } else {
-                JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "LOGIN", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, "Error en la conexión a la base de datos: " + e.getMessage(), "LOGIN", JOptionPane.ERROR_MESSAGE);
-     
-    }//GEN-LAST:event_btnLoginMouseClicked
-    }
-    
-    
-
-    
-
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            Connection conexion = c.conectar();
+            if (conexion != null) {
+                String query = "SELECT * FROM usuarios WHERE nombre_usuario = ? AND contrasena = ?";
+                PreparedStatement ps = conexion.prepareStatement(query);
+                ps.setString(1, username);
+                ps.setString(2, password);
+                ResultSet rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(this, "Intento de inicio de sesión exitoso", "LOGIN", JOptionPane.INFORMATION_MESSAGE);
+
+                    // Cerrar la ventana de inicio de sesión
+                    this.dispose();
+
+                    // Crear y mostrar el JFrame del Dashboard
+                    java.awt.EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            new Dashboard().setVisible(true);
+                        }
+                    });
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos", "LOGIN", JOptionPane.ERROR_MESSAGE);
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error en la conexión a la base de datos: " + e.getMessage(), "LOGIN", JOptionPane.ERROR_MESSAGE);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnLoginMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new inicio().setVisible(true);
-            }
-        });
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

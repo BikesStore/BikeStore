@@ -20,6 +20,7 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
+        System.out.println("Inicializando Dashboard...");
         InitStyles();
         SetDate();
         InitContent();
@@ -46,6 +47,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     public static void ShowJPanel(JPanel p) {
+        System.out.println("Mostrando panel: " + p.getClass().getSimpleName());
         p.setSize(750, 430);
         p.setLocation(0, 0);
 
@@ -96,7 +98,6 @@ public class Dashboard extends javax.swing.JFrame {
         btn_venta.setBackground(new java.awt.Color(255, 130, 84));
         btn_venta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_venta.setForeground(new java.awt.Color(255, 255, 255));
-        btn_venta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home-outline.png"))); // NOI18N
         btn_venta.setText("Venta");
         btn_venta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_venta.setBorderPainted(false);
@@ -181,7 +182,6 @@ public class Dashboard extends javax.swing.JFrame {
         btn_reports.setBackground(new java.awt.Color(255, 130, 84));
         btn_reports.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_reports.setForeground(new java.awt.Color(255, 255, 255));
-        btn_reports.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file-chart.png"))); // NOI18N
         btn_reports.setText("Reportes");
         btn_reports.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_reports.setBorderPainted(false);
@@ -195,7 +195,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\mvjxd\\OneDrive\\Documentos\\NetBeansProjects\\iLib-main\\src\\main\\resources\\Logo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo.png"))); // NOI18N
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
@@ -346,17 +346,7 @@ public class Dashboard extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        FlatMaterialLighterIJTheme.setup();
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel appName;

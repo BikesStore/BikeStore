@@ -177,14 +177,14 @@ public class Reports extends javax.swing.JPanel {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         ShowJPanel (new Ventas());
+
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-       
+
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnBorrarActionPerformed
 
 

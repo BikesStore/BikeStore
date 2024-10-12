@@ -158,7 +158,6 @@ public class Servicios extends javax.swing.JPanel {
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void precioTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioTFActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_precioTFActionPerformed
 
 
