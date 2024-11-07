@@ -148,8 +148,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_users.setBackground(new java.awt.Color(255, 130, 84));
         btn_users.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_users.setForeground(new java.awt.Color(255, 255, 255));
-        btn_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/account-multiple.png"))); // NOI18N
-        btn_users.setText("44");
+        btn_users.setText("Almacen");
         btn_users.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_users.setBorderPainted(false);
         btn_users.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -324,7 +323,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_ventaActionPerformed
 
     private void btn_lendsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lendsActionPerformed
-        ShowJPanel(new Lendings());
+        ShowJPanel(new Reportsaa());
     }//GEN-LAST:event_btn_lendsActionPerformed
 
     private void btn_returnsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_returnsActionPerformed
@@ -332,7 +331,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_returnsActionPerformed
 
     private void btn_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usersActionPerformed
-        ShowJPanel(new Reportsaa());
+        ShowJPanel(new Lendings());
     }//GEN-LAST:event_btn_usersActionPerformed
 
     private void btn_servActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_servActionPerformed
