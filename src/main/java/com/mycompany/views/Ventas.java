@@ -344,6 +344,8 @@ public class Ventas extends javax.swing.JPanel {
                     dtm.addRow(r);
                     total += _subTotal;
                     jLTotal.setText("$" + Double.toString(total));
+                    codigo.setText("");
+                    cantidad.setText("");
                 }
             }
         } catch (Exception e) {
