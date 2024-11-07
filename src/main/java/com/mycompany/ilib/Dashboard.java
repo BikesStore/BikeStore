@@ -164,7 +164,6 @@ public class Dashboard extends javax.swing.JFrame {
         btn_serv.setBackground(new java.awt.Color(255, 130, 84));
         btn_serv.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_serv.setForeground(new java.awt.Color(255, 255, 255));
-        btn_serv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/book-open-page-variant.png"))); // NOI18N
         btn_serv.setText("Servicios");
         btn_serv.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 13, 1, 1, new java.awt.Color(0, 0, 0)));
         btn_serv.setBorderPainted(false);
