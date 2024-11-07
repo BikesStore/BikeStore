@@ -1,16 +1,27 @@
 package com.mycompany.views;
 
-
+import com.mycompany.db.c;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Lendings extends javax.swing.JPanel {
+
+    private DefaultTableModel dtm;
+
+    private Object[] o = new Object[6];
 
     public Lendings() {
         initComponents();
         InitStyles();
+        dtm = (DefaultTableModel) producT.getModel();
+
     }
 
     private void InitStyles() {
-        
+
     }
 
     /**
@@ -23,29 +34,217 @@ public class Lendings extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        Titulo = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        producT = new javax.swing.JTable();
+        producTF = new javax.swing.JLabel();
+        procTF = new javax.swing.JTextField();
+        editBT = new javax.swing.JButton();
+        deleBT = new javax.swing.JButton();
+        addBT = new javax.swing.JButton();
+        codeJL = new javax.swing.JLabel();
+        codeTF = new javax.swing.JTextField();
+        cateJL = new javax.swing.JLabel();
+        catTF = new javax.swing.JTextField();
+        precCJL = new javax.swing.JLabel();
+        preCTF = new javax.swing.JTextField();
+        preVJL = new javax.swing.JLabel();
+        exitJL = new javax.swing.JLabel();
+        preVTF = new javax.swing.JTextField();
+        exitTF = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("jLabel1");
+        Titulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Titulo.setText("Almacen");
+
+        producT.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Codigo", "Producto", "Categoria", "Precio Compra", "Precio Venta", "Existencia"
+            }
+        ));
+        producT.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                producTAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane2.setViewportView(producT);
+
+        producTF.setText("Producto");
+
+        procTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                procTFActionPerformed(evt);
+            }
+        });
+
+        editBT.setBackground(new java.awt.Color(255, 153, 0));
+        editBT.setForeground(new java.awt.Color(255, 255, 255));
+        editBT.setText("Editar");
+        editBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBTActionPerformed(evt);
+            }
+        });
+
+        deleBT.setBackground(new java.awt.Color(255, 153, 0));
+        deleBT.setForeground(new java.awt.Color(255, 255, 255));
+        deleBT.setText("Eliminar");
+        deleBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleBTActionPerformed(evt);
+            }
+        });
+
+        addBT.setBackground(new java.awt.Color(255, 153, 0));
+        addBT.setForeground(new java.awt.Color(255, 255, 255));
+        addBT.setText("Agregar");
+        addBT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTActionPerformed(evt);
+            }
+        });
+
+        codeJL.setText("Codigo");
+
+        codeTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeTFActionPerformed(evt);
+            }
+        });
+
+        cateJL.setText("Categoria");
+
+        catTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catTFActionPerformed(evt);
+            }
+        });
+
+        precCJL.setText("Precio Compra");
+
+        preCTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preCTFActionPerformed(evt);
+            }
+        });
+
+        preVJL.setText("Precio Venta");
+
+        exitJL.setText("Existencia");
+
+        preVTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preVTFActionPerformed(evt);
+            }
+        });
+
+        exitTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitTFActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(308, 308, 308)
-                .addComponent(jLabel1)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addComponent(cateJL)
+                                .addGap(38, 38, 38)
+                                .addComponent(catTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(producTF, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(codeJL, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(codeTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(procTF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(precCJL, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(preVJL)
+                                    .addComponent(exitJL))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(exitTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(preVTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(preCTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(bgLayout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(Titulo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(deleBT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addBT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                            .addComponent(editBT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(104, 104, 104))))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(jLabel1)
-                .addContainerGap(260, Short.MAX_VALUE))
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(codeJL)
+                            .addComponent(codeTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(producTF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(procTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cateJL)
+                            .addComponent(exitJL)
+                            .addComponent(catTF, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Titulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(precCJL, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(preVJL)
+                            .addComponent(preVTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exitTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBT, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(preCTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(deleBT, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(editBT, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -56,12 +255,275 @@ public class Lendings extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void producTAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_producTAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_producTAncestorAdded
+
+    private void procTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_procTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_procTFActionPerformed
+
+    private void editBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBTActionPerformed
+
+        // Verifica si hay una fila seleccionada en la tabla
+        int selectedRow = producT.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la tabla.");
+            return;
+        }
+
+        // Obtiene el código del producto desde la columna de la tabla (suponiendo que el código está en la primera columna)
+        String codigo = producT.getValueAt(selectedRow, 0).toString();
+
+        // Obtiene los nuevos valores del producto (esto puede ser un campo de texto donde el usuario ingresa el nuevo valor)
+        String nuevoProducto = JOptionPane.showInputDialog(this, "Ingresa el nuevo nombre del producto:");
+        String nuevaCategoria = JOptionPane.showInputDialog(this, "Ingresa la nueva categoría del producto:");
+        String nuevoPrecioCompraStr = JOptionPane.showInputDialog(this, "Ingresa el nuevo precio de compra:");
+        String nuevoPrecioVentaStr = JOptionPane.showInputDialog(this, "Ingresa el nuevo precio de venta:");
+        String nuevaExistenciaStr = JOptionPane.showInputDialog(this, "Ingresa la nueva cantidad de existencia:");
+
+        // Verifica si los campos no están vacíos
+        if (nuevoProducto == null || nuevoProducto.trim().isEmpty()
+                || nuevaCategoria == null || nuevaCategoria.trim().isEmpty()
+                || nuevoPrecioCompraStr == null || nuevoPrecioCompraStr.trim().isEmpty()
+                || nuevoPrecioVentaStr == null || nuevoPrecioVentaStr.trim().isEmpty()
+                || nuevaExistenciaStr == null || nuevaExistenciaStr.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos.");
+            return;
+        }
+
+        // Convierte los valores numéricos de precio y existencia a los tipos correctos
+        double nuevoPrecioCompra = Double.parseDouble(nuevoPrecioCompraStr);
+        double nuevoPrecioVenta = Double.parseDouble(nuevoPrecioVentaStr);
+        int nuevaExistencia = Integer.parseInt(nuevaExistenciaStr);
+
+        // Conexión a la base de datos
+        Connection conexion = c.conectar();
+
+        if (conexion == null) {
+            JOptionPane.showMessageDialog(this, "Error de conexión a la base de datos.");
+            return;
+        }
+
+        // Consulta SQL para actualizar el producto
+        String sql = "UPDATE productos SET producto = ?, categoria = ?, precioCompra = ?, precioVenta = ?, existencia = ? WHERE codigo = ?";
+
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
+            // Establece los valores en la consulta
+            pst.setString(1, nuevoProducto);
+            pst.setString(2, nuevaCategoria);
+            pst.setDouble(3, nuevoPrecioCompra);
+            pst.setDouble(4, nuevoPrecioVenta);
+            pst.setInt(5, nuevaExistencia);
+            pst.setString(6, codigo);
+
+            // Ejecuta la actualización en la base de datos
+            int filasActualizadas = pst.executeUpdate();
+
+            if (filasActualizadas > 0) {
+                JOptionPane.showMessageDialog(this, "Producto actualizado exitosamente.");
+
+                // Actualiza el valor de las celdas en la tabla para reflejar los cambios
+                DefaultTableModel model = (DefaultTableModel) producT.getModel();
+                model.setValueAt(nuevoProducto, selectedRow, 1);       // Asumiendo que el nombre está en la segunda columna (índice 1)
+                model.setValueAt(nuevaCategoria, selectedRow, 2);    // Asumiendo que la categoría está en la tercera columna (índice 2)
+                model.setValueAt(nuevoPrecioCompra, selectedRow, 3);  // Asumiendo que el precio de compra está en la cuarta columna (índice 3)
+                model.setValueAt(nuevoPrecioVenta, selectedRow, 4);   // Asumiendo que el precio de venta está en la quinta columna (índice 4)
+                model.setValueAt(nuevaExistencia, selectedRow, 5);    // Asumiendo que la existencia está en la sexta columna (índice 5)
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontró ningún producto con el código especificado.");
+            }
+
+        } catch (SQLException ex) {
+            // Manejo de excepciones, muestra un mensaje con el error
+            JOptionPane.showMessageDialog(this, "Error al actualizar el producto: " + ex.getMessage());
+        } finally {
+            try {
+                if (conexion != null) {
+                    conexion.close(); // Cierra la conexión después de usarla
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error al cerrar la conexión: " + ex.getMessage());
+            }
+        }
+    }//GEN-LAST:event_editBTActionPerformed
+
+    private void deleBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleBTActionPerformed
+
+        // Supongamos que 'c' es una instancia de una clase que maneja la conexión y tiene un método 'conectar'
+        Connection conexion = c.conectar();
+
+        // Verifica que la conexión sea válida
+        if (conexion == null) {
+            JOptionPane.showMessageDialog(this, "Error de conexión a la base de datos.");
+            return;
+        }
+
+        // Obtiene el índice de la fila seleccionada en la tabla
+        int selectedRow = producT.getSelectedRow();
+
+        // Verifica si hay una fila seleccionada
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un producto de la tabla.");
+            return;
+        }
+
+        // Obtener el código del producto desde la columna de la tabla (suponiendo que el código está en la primera columna)
+        String codigo = producT.getValueAt(selectedRow, 0).toString();
+
+        // Consulta SQL para eliminar el producto basado en el código
+        String sql = "DELETE FROM productos WHERE codigo = ?";
+
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
+            // Establece el valor del código en la consulta
+            pst.setString(1, codigo);
+
+            // Ejecuta la eliminación en la base de datos
+            int filasEliminadas = pst.executeUpdate();
+
+            if (filasEliminadas > 0) {
+                JOptionPane.showMessageDialog(this, "Producto eliminado exitosamente.");
+
+                // Elimina la fila de la tabla en la interfaz
+                DefaultTableModel model = (DefaultTableModel) producT.getModel();
+                model.removeRow(selectedRow);
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontró ningún producto con el código especificado.");
+            }
+
+        } catch (SQLException ex) {
+            // Manejo de excepciones, se muestra un mensaje con el error
+            JOptionPane.showMessageDialog(this, "Error al eliminar el producto: " + ex.getMessage());
+        } finally {
+            try {
+                if (conexion != null) {
+                    conexion.close(); // Asegúrate de cerrar la conexión después de usarla
+                }
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(this, "Error al cerrar la conexión: " + ex.getMessage());
+            }
+        }
+
+    }//GEN-LAST:event_deleBTActionPerformed
+
+    private void addBTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTActionPerformed
+
+        Connection conexion = c.conectar();
+        if (conexion == null) {
+            JOptionPane.showMessageDialog(this, "Error de conexión a la base de datos.");
+            return;
+        }
+
+        // Retrieve values from the text fields
+        String codigo = codeTF.getText();
+        String producto = procTF.getText();
+        String categoria = catTF.getText();
+        String precioCompra = preCTF.getText();
+        String precioVenta = preVTF.getText();
+        String existencia = exitTF.getText();
+
+        // Validate numerical fields
+        double precioCompraDouble;
+        double precioVentaDouble;
+        int existenciaInt;
+
+        try {
+            precioCompraDouble = Double.parseDouble(precioCompra);
+            precioVentaDouble = Double.parseDouble(precioVenta);
+            existenciaInt = Integer.parseInt(existencia);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor, asegúrate de que el precio de compra, precio de venta, y existencia sean valores numéricos válidos.");
+            return;
+        }
+
+        // Add data to table model
+        o[0] = codigo;
+        o[1] = producto;
+        o[2] = categoria;
+        o[3] = precioCompraDouble;
+        o[4] = precioVentaDouble;
+        o[5] = existenciaInt;
+
+        dtm.addRow(o);
+
+        // SQL query to insert data into the database
+        String sql = "INSERT INTO productos (codigo, producto, categoria, precioCompra, precioVenta, existencia) VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (PreparedStatement pst = conexion.prepareStatement(sql)) {
+            // Set values for the query
+            pst.setString(1, codigo);
+            pst.setString(2, producto);
+            pst.setString(3, categoria);
+            pst.setDouble(4, precioCompraDouble);
+            pst.setDouble(5, precioVentaDouble);
+            pst.setInt(6, existenciaInt);
+
+            int filasInsertadas = pst.executeUpdate();
+            if (filasInsertadas > 0) {
+                JOptionPane.showMessageDialog(this, "Producto agregado exitosamente.");
+
+                // Clear the text fields after adding the product
+                codeTF.setText("");
+                procTF.setText("");
+                catTF.setText("");
+                preCTF.setText("");
+                preVTF.setText("");
+                exitTF.setText("");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error al agregar el producto: " + ex.getMessage());
+        }
+
+    }//GEN-LAST:event_addBTActionPerformed
+
+    private void codeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codeTFActionPerformed
+
+    private void catTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_catTFActionPerformed
+
+    private void preCTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preCTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_preCTFActionPerformed
+
+    private void preVTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preVTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_preVTFActionPerformed
+
+    private void exitTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitTFActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton addBT;
     private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField catTF;
+    private javax.swing.JLabel cateJL;
+    private javax.swing.JLabel codeJL;
+    private javax.swing.JTextField codeTF;
+    private javax.swing.JButton deleBT;
+    private javax.swing.JButton editBT;
+    private javax.swing.JLabel exitJL;
+    private javax.swing.JTextField exitTF;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField preCTF;
+    private javax.swing.JLabel preVJL;
+    private javax.swing.JTextField preVTF;
+    private javax.swing.JLabel precCJL;
+    private javax.swing.JTextField procTF;
+    private javax.swing.JTable producT;
+    private javax.swing.JLabel producTF;
     // End of variables declaration//GEN-END:variables
 }
