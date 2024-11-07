@@ -49,33 +49,24 @@
                               <Component id="jScrollPane1" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="codigoJL" min="-2" pref="76" max="-2" attributes="0"/>
-                                      <Component id="codigo" min="-2" pref="118" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="producto" min="-2" pref="230" max="-2" attributes="0"/>
-                                      <Component id="prodJL" min="-2" max="-2" attributes="0"/>
+                                      <Component id="codigo" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="codigoJL" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="cantJL" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                                      <Component id="cantidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="predioJL" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="cantJL" min="-2" pref="54" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="cantidad" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Component id="btnAgregar" min="-2" pref="105" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="precio" min="-2" pref="73" max="-2" attributes="0"/>
-                                          <EmptySpace pref="40" max="32767" attributes="0"/>
-                                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="title" min="-2" pref="343" max="-2" attributes="0"/>
@@ -93,7 +84,7 @@
                                   <EmptySpace min="-2" pref="557" max="-2" attributes="0"/>
                                   <Component id="totalJL" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLTotal" max="32767" attributes="0"/>
+                                  <Component id="jLTotal" pref="58" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -111,25 +102,21 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="codigoJL" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="prodJL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cantJL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="predioJL" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="producto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="codigo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="cantidad" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="codigo" max="32767" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="precio" alignment="3" max="32767" attributes="0"/>
                           <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="87" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" pref="92" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="totalJL" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -150,35 +137,12 @@
         </Component>
         <Component class="javax.swing.JTextField" name="codigo">
         </Component>
-        <Component class="javax.swing.JLabel" name="prodJL">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Producto"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="producto">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="productoActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="cantJL">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cantidad"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="cantidad">
-        </Component>
-        <Component class="javax.swing.JLabel" name="predioJL">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Precio"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="precio">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="precioActionPerformed"/>
-          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
