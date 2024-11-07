@@ -304,9 +304,9 @@ public class Ventas extends javax.swing.JPanel {
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(totalJL)
                     .addComponent(jLTotal))
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addComponent(btnCobrar)
-                .addGap(46, 46, 46))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
