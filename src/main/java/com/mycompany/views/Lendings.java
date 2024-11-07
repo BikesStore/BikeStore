@@ -1,9 +1,12 @@
 package com.mycompany.views;
 
 import com.mycompany.db.c;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,12 +19,38 @@ public class Lendings extends javax.swing.JPanel {
     public Lendings() {
         initComponents();
         InitStyles();
+        recargarProductos();
         dtm = (DefaultTableModel) producT.getModel();
 
     }
 
     private void InitStyles() {
+        title.putClientProperty("FlatLaf.styleClass", "h1");
+        title.setForeground(Color.black);
+    }
 
+    private void recargarProductos() {
+        // Limpiar la tabla antes de recargarla
+        DefaultTableModel model = (DefaultTableModel) producT.getModel();
+        model.setRowCount(0);
+
+        // Obtener los datos actualizados de la base de datos
+        try (Connection conexion = c.conectar(); Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery("SELECT * FROM productos")) {
+
+            while (rs.next()) {
+                Object[] fila = new Object[6];
+                fila[0] = rs.getInt("codigo");
+                fila[1] = rs.getString("producto");
+                fila[2] = rs.getString("categoria");
+                fila[3] = rs.getDouble("precioCompra");
+                fila[4] = rs.getDouble("precioVenta");
+                fila[5] = rs.getInt("existencia");
+
+                model.addRow(fila);
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al recargar los productos: " + e.getMessage());
+        }
     }
 
     /**
@@ -34,7 +63,7 @@ public class Lendings extends javax.swing.JPanel {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         producT = new javax.swing.JTable();
         producTF = new javax.swing.JLabel();
@@ -57,8 +86,8 @@ public class Lendings extends javax.swing.JPanel {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
-        Titulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        Titulo.setText("Almacen");
+        title.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        title.setText("Almacen");
 
         producT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -193,7 +222,7 @@ public class Lendings extends javax.swing.JPanel {
                             .addComponent(preCTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
-                        .addComponent(Titulo)))
+                        .addComponent(title)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(deleBT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -225,7 +254,7 @@ public class Lendings extends javax.swing.JPanel {
                             .addComponent(catTF, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(bgLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Titulo)
+                        .addComponent(title)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(precCJL, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -507,7 +536,6 @@ public class Lendings extends javax.swing.JPanel {
     }//GEN-LAST:event_exitTFActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Titulo;
     private javax.swing.JButton addBT;
     private javax.swing.JPanel bg;
     private javax.swing.JTextField catTF;
@@ -526,5 +554,6 @@ public class Lendings extends javax.swing.JPanel {
     private javax.swing.JTextField procTF;
     private javax.swing.JTable producT;
     private javax.swing.JLabel producTF;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
