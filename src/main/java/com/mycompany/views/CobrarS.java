@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JButton;
@@ -170,7 +169,6 @@ public class CobrarS extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(742, 427));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pp.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -283,7 +281,16 @@ public class CobrarS extends javax.swing.JPanel {
                     .addGap(163, 163, 163)))
         );
 
-        add(pp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
@@ -302,7 +309,6 @@ public class CobrarS extends javax.swing.JPanel {
                     _precio = Double.toString(rs.getDouble("precio"));
                     _subTotal = Double.parseDouble(_precio);
 
-                    // Verificación de que todos los valores no sean nulos
                     if (_codigo != null && _servicio != null && _precio != null) {
                         r[0] = _codigo;
                         r[1] = _servicio;
@@ -317,7 +323,7 @@ public class CobrarS extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Error: No se pudieron cargar todos los datos del servicio.", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "No existe el servicio", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "No existe el servicio", "Error al agregar servicio", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } catch (NumberFormatException e) {
