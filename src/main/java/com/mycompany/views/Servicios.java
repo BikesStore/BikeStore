@@ -247,24 +247,20 @@ public class Servicios extends javax.swing.JPanel {
         String servicio = (String) tm.getValueAt(selectedRow, 1);
         double precio = (double) tm.getValueAt(selectedRow, 2);
 
-        // Crear el diálogo de edición
         JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Editar Servicio", true);
         dialog.setLayout(new GridBagLayout());
         dialog.setSize(400, 200);
         dialog.setLocationRelativeTo(this);
 
-        // Crear componentes del diálogo
         JTextField servTF = new JTextField(servicio, 15);
         JTextField precioTF = new JTextField(String.valueOf(precio), 10);
         JButton confirmarButton = new JButton("Confirmar");
         JButton cancelarButton = new JButton("Cancelar");
 
-        // Configuración de GridBagLayout
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new java.awt.Insets(10, 10, 10, 10);  // Espacio de 10px alrededor de cada componente
+        gbc.insets = new java.awt.Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Agregar etiqueta y campo de texto para el servicio
         gbc.gridx = 0;
         gbc.gridy = 0;
         dialog.add(new JLabel("Servicio:"), gbc);
@@ -272,7 +268,6 @@ public class Servicios extends javax.swing.JPanel {
         gbc.gridx = 1;
         dialog.add(servTF, gbc);
 
-        // Agregar etiqueta y campo de texto para el precio
         gbc.gridx = 0;
         gbc.gridy = 1;
         dialog.add(new JLabel("Precio:"), gbc);
@@ -280,7 +275,6 @@ public class Servicios extends javax.swing.JPanel {
         gbc.gridx = 1;
         dialog.add(precioTF, gbc);
 
-        // Agregar botones Confirmar y Cancelar
         gbc.gridy = 2;
         gbc.gridx = 0;
         dialog.add(confirmarButton, gbc);
@@ -288,7 +282,6 @@ public class Servicios extends javax.swing.JPanel {
         gbc.gridx = 1;
         dialog.add(cancelarButton, gbc);
 
-        // Acción para el botón Confirmar
         confirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -296,7 +289,6 @@ public class Servicios extends javax.swing.JPanel {
                     String nuevoServicio = servTF.getText().trim();
                     double nuevoPrecio = Double.parseDouble(precioTF.getText().trim());
 
-                    // Llamar al método actualizarServicio de la clase actual
                     actualizarServicio(idServicio, nuevoServicio, nuevoPrecio);
 
                     dialog.dispose();
@@ -306,14 +298,13 @@ public class Servicios extends javax.swing.JPanel {
             }
         });
 
-        // Acción para el botón Cancelar
         cancelarButton.addActionListener(e -> dialog.dispose());
 
         dialog.setVisible(true);
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+
         String servicio = servTF.getText().trim();
         if (servicio.isEmpty()) {
             JOptionPane.showMessageDialog(this, "El campo Servicio no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -323,7 +314,7 @@ public class Servicios extends javax.swing.JPanel {
         try {
             precio = Double.parseDouble(precioTF.getText().trim());
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Precio debe ser un número.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El precio debe ser un número.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         String stm = "select * from servicios";
         try {
@@ -364,7 +355,18 @@ public class Servicios extends javax.swing.JPanel {
 
         int idServicio = (int) tm.getValueAt(selectedRow, 0);
 
-        int confirm = JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar el servicio?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+        String[] options = {"Sí", "No"};
+        int confirm = JOptionPane.showOptionDialog(
+                this,
+                "¿Está seguro de que desea eliminar el servicio?",
+                "Confirmar eliminación",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[0]
+        );
+
         if (confirm != JOptionPane.YES_OPTION) {
             return;
         }
