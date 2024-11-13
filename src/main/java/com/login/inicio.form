@@ -47,31 +47,41 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="145" pref="145" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jlTitulo" min="-2" max="-2" attributes="0"/>
                       <Component id="userJL" min="-2" pref="220" max="-2" attributes="0"/>
-                      <Component id="userTxt" min="-2" pref="370" max="-2" attributes="0"/>
                       <Component id="passTxt" min="-2" pref="380" max="-2" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
-                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="passJL" min="-2" pref="301" max="-2" attributes="0"/>
                   </Group>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" pref="370" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                  <Component id="jlTitulo" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" pref="370" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
+                  <Component id="userTxt" min="-2" pref="370" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                  <Component id="barra" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="325" pref="325" max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
               <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
-              <Component id="barra" min="-2" max="-2" attributes="0"/>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSeparator2" min="-2" pref="370" max="-2" attributes="0"/>
-                      <Component id="passJL" min="-2" pref="220" max="-2" attributes="0"/>
-                      <Component id="jSeparator1" min="-2" pref="370" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -79,34 +89,42 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
               <Group type="102" attributes="0">
-                  <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
-                  <Component id="jlTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="77" pref="77" max="-2" attributes="0"/>
+                  <EmptySpace min="195" pref="195" max="-2" attributes="0"/>
                   <Component id="userJL" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
+                          <Component id="passTxt" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="passJL" min="-2" pref="51" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="255" pref="255" max="-2" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" pref="20" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
+                  <Component id="jlTitulo" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="335" pref="335" max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" pref="20" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="225" pref="225" max="-2" attributes="0"/>
                   <Component id="userTxt" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                  <Component id="passTxt" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+              </Group>
+              <Component id="barra" alignment="0" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="360" pref="360" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
                   <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                   <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="350" pref="350" max="-2" attributes="0"/>
-                  <Component id="jSeparator2" min="-2" pref="20" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="290" pref="290" max="-2" attributes="0"/>
-                  <Component id="passJL" min="-2" pref="30" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace min="270" pref="270" max="-2" attributes="0"/>
-                  <Component id="jSeparator1" min="-2" pref="20" max="-2" attributes="0"/>
-              </Group>
-              <Component id="barra" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -114,7 +132,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
+              <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
 
@@ -156,6 +174,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="exitTxt">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto Light" size="24" style="3"/>
                     </Property>
@@ -179,7 +200,7 @@
         <Container class="javax.swing.JPanel" name="barra">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
+              <Color blue="d6" green="9c" red="63" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -190,7 +211,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="800" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="760" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -203,7 +224,7 @@
         <Container class="javax.swing.JPanel" name="jPanel9">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="44" green="65" red="f6" type="rgb"/>
+              <Color blue="d6" green="9c" red="63" type="rgb"/>
             </Property>
           </Properties>
 
@@ -223,7 +244,7 @@
         <Container class="javax.swing.JPanel" name="jPanel10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="44" green="65" red="f6" type="rgb"/>
+              <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
 
@@ -251,7 +272,7 @@
         <Component class="javax.swing.JLabel" name="userJL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto" size="24" style="0"/>
+              <Font name="Roboto" size="36" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="USUARIO"/>
           </Properties>
@@ -259,7 +280,7 @@
         <Component class="javax.swing.JTextField" name="userTxt">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto" size="14" style="0"/>
+              <Font name="Roboto" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -283,7 +304,7 @@
         <Component class="javax.swing.JLabel" name="passJL">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Roboto" size="24" style="0"/>
+              <Font name="Roboto" size="36" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="CONTRASE&#xd1;A"/>
           </Properties>
@@ -298,7 +319,7 @@
         <Component class="javax.swing.JPasswordField" name="passTxt">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="0"/>
+              <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -315,7 +336,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="44" green="65" red="f6" type="rgb"/>
+              <Color blue="d6" green="9c" red="63" type="rgb"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -339,7 +360,7 @@
             <Component class="javax.swing.JLabel" name="btnLogin">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Roboto Medium" size="18" style="0"/>
+                  <Font name="Roboto Medium" size="24" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>

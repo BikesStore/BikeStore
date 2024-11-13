@@ -47,10 +47,11 @@ public class inicio extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         exitBtn.setBackground(new java.awt.Color(255, 255, 255));
 
+        exitTxt.setBackground(new java.awt.Color(255, 255, 255));
         exitTxt.setFont(new java.awt.Font("Roboto Light", 3, 24)); // NOI18N
         exitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         exitTxt.setText("X");
@@ -92,7 +93,7 @@ public class inicio extends javax.swing.JFrame {
                 .addGap(0, 460, Short.MAX_VALUE))
         );
 
-        barra.setBackground(new java.awt.Color(0, 0, 0));
+        barra.setBackground(new java.awt.Color(99, 156, 214));
         barra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 barraMouseDragged(evt);
@@ -108,14 +109,14 @@ public class inicio extends javax.swing.JFrame {
         barra.setLayout(barraLayout);
         barraLayout.setHorizontalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
         barraLayout.setVerticalGroup(
             barraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel9.setBackground(new java.awt.Color(246, 101, 68));
+        jPanel9.setBackground(new java.awt.Color(99, 156, 214));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -128,7 +129,7 @@ public class inicio extends javax.swing.JFrame {
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        jPanel10.setBackground(new java.awt.Color(246, 101, 68));
+        jPanel10.setBackground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -144,10 +145,10 @@ public class inicio extends javax.swing.JFrame {
         jlTitulo.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
         jlTitulo.setText("INICIAR SESION");
 
-        userJL.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        userJL.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
         userJL.setText("USUARIO");
 
-        userTxt.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        userTxt.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         userTxt.setForeground(new java.awt.Color(204, 204, 204));
         userTxt.setText("Ingrese su nombre de usuario");
         userTxt.setBorder(null);
@@ -159,12 +160,12 @@ public class inicio extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
-        passJL.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        passJL.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
         passJL.setText("CONTRASEÑA");
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        passTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        passTxt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         passTxt.setForeground(new java.awt.Color(204, 204, 204));
         passTxt.setText("********");
         passTxt.setBorder(null);
@@ -174,11 +175,11 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(246, 101, 68));
+        jPanel2.setBackground(new java.awt.Color(99, 156, 214));
         jPanel2.setToolTipText("");
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btnLogin.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Roboto Medium", 0, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnLogin.setText("ENTRAR");
@@ -207,52 +208,63 @@ public class inicio extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(145, 145, 145)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlTitulo)
                     .addComponent(userJL, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(passTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passJL, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(passJL, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(225, 225, 225)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(jlTitulo))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(userTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(325, 325, 325)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jlTitulo)
-                .addGap(77, 77, 77)
+                .addGap(195, 195, 195)
                 .addComponent(userJL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(userTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(passTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(37, 37, 37)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(passTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passJL, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(92, 92, 92)
+                .addComponent(jlTitulo))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(335, 335, 335)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(userTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addGap(360, 360, 360)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(passJL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(270, 270, 270)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(barra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
